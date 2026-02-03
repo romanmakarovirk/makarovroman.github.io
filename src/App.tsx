@@ -1,9 +1,12 @@
 import { WebGLShader } from "./components/ui/web-gl-shader"
+import { AnimatedGallery } from "./components/ui/animated-gallery"
 import { useState, useEffect } from "react"
 import "./index.css"
 
 function App() {
   const [activeTab, setActiveTab] = useState("martial")
+  const [selectedVideo, setSelectedVideo] = useState<string | null>(null)
+  const [selectedImage, setSelectedImage] = useState<string | null>(null)
 
   useEffect(() => {
     const reveals = document.querySelectorAll('.reveal')
@@ -197,17 +200,20 @@ function App() {
               <div className="story-content">
                 <h3 className="story-heading">Знакомство с ИИ</h3>
                 <p className="story-preview text-text-secondary text-sm leading-relaxed">
-                  Я всегда интересовался новыми технологиями. Когда услышал о прорыве языковых моделей, начал углубляться всё дальше...
+                  Моё знакомство с искусственным интеллектом началось в 6 классе. Тогда я впервые попробовал работать с ChatGPT 3.5 и написал свой первый промт...
                 </p>
                 <div className="story-full max-h-0 overflow-hidden transition-all duration-500 opacity-0" id="story-3">
                   <p className="text-text-secondary text-sm leading-relaxed mb-4">
-                    Я всегда интересовался новыми технологиями. Когда услышал новости о том, что языковые модели значительно выросли в производительности за короткое время, сразу стало интересно. Начал углубляться всё дальше и дальше.
+                    Моё знакомство с искусственным интеллектом началось в 6 классе. Тогда я впервые попробовал работать с ChatGPT 3.5 и написал свой первый промт. Уже после этого опыта мне стало понятно, что за подобными технологиями стоит будущее. Меня поразило, что программа может понимать текст, рассуждать и помогать решать задачи, которые раньше требовали участия человека.
                   </p>
                   <p className="text-text-secondary text-sm leading-relaxed mb-4">
-                    Стал много общаться с ИИ по вопросам, которые требовали огромного времени для ресёрча интернета. А когда нейросети научились нормально программировать — начал создавать свои проекты. Сейчас постоянно использую ИИ в разработке своих IT-проектов.
+                    С этого момента мне стало интересно не просто пользоваться ИИ, а понять, как вообще работает технология, способная заменить или радикально изменить огромное количество профессий. Со временем интерес только усиливался: нейросети начали активно использоваться в программировании, дизайне, анализе данных. Я сам пробовал заниматься так называемым вайб-кодингом и на практике убедился, что сегодня даже человек без знания языков программирования может создать простой сайт или программу с помощью ИИ.
+                  </p>
+                  <p className="text-text-secondary text-sm leading-relaxed mb-4">
+                    Однако довольно быстро я понял важную вещь: использовать инструменты искусственного интеллекта — это одно, а понимать, как они работают внутри, — совсем другое. Когда я начал читать статьи о нейронных сетях и машинном обучении, я столкнулся с математикой, которую пока не понимаю в полной мере. Линейная алгебра, матрицы, градиентный спуск, функции активации — всё это для меня сейчас сложная, но крайне интересная область. И в вашей школе я очень надеюсь познакомиться с этими разделами математики и углубиться в эту интересную сферу разработки.
                   </p>
                 </div>
-                <button 
+                <button
                   className="story-toggle inline-flex items-center gap-2 mt-4 px-4 py-2 bg-accent-soft rounded-full text-accent text-xs font-medium transition-all hover:bg-accent hover:text-white"
                   onClick={(e) => toggleStory('story-3', e.currentTarget)}
                 >
@@ -235,20 +241,20 @@ function App() {
         {/* Channel Section */}
         <section id="channel" className="channel-section bg-gradient-to-br from-[#1a1a2e] to-[#2d2d44] rounded-[32px] p-12 md:p-16 my-12 mx-auto max-w-6xl text-white relative overflow-hidden">
           <div className="channel-section::before absolute top-1/5 -left-24 w-64 h-64 rounded-full bg-gradient-to-br from-indigo-500/30 to-purple-500/20 backdrop-blur-[40px]"></div>
-          
+
           <div className="section-header text-center mb-12 reveal">
             <p className="section-label text-white/50 text-xs font-semibold tracking-widest uppercase mb-2">Контент</p>
             <h2 className="section-title text-white">Канал RZ_RM</h2>
           </div>
-          
+
           <div className="channel-grid grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-12 items-center relative z-10">
             <div className="channel-info reveal">
               <h3 className="text-3xl mb-4 font-display">Мотопутешествия и квадроциклы</h3>
               <p className="text-white/75 leading-relaxed mb-4">
-                Мы оба увлекаемся съёмками и катанием на квадроциклах. Всегда хотели делать и то, и другое — чтобы нас знали люди. 8 января 2025 года основали канал.
+                Этот канал мы создали с моим другом и нас объединяло желание путешествовать и снимать все это. Так и появился наш канал в котором на данный момент 9 человек по настоящему заинтересованных в развитии нашего комьюнити. А так же 522 настоящих подписчика следящие за нашими путешествиями.
               </p>
               <p className="text-white/75 leading-relaxed mb-4">
-                За несколько месяцев собрали команду из 9 человек: операторы и ребята, с которыми катаемся. Они снимают контент, а мы с другом монтируем. Снимаем на GoPro, дрон и телефоны.
+                Видео которые представлены ниже сняты и смонтированы мной, надеюсь вам понравится. Если захотите посмотреть больше — снизу есть ссылка на наш телеграмм канал.
               </p>
               <div className="channel-stats flex gap-8 my-6">
                 <div className="channel-stat text-center">
@@ -270,6 +276,46 @@ function App() {
               <img src="/images/channel-1.jpg" alt="Поездка" className="w-full h-auto rounded-2xl transition-transform hover:scale-105 cursor-pointer" style={{ objectFit: 'contain' }} />
             </div>
           </div>
+
+          {/* Видео с канала */}
+          <div className="channel-videos mt-12 reveal">
+            <h4 className="text-xl font-display text-center mb-6 text-white/80">Мои работы</h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {[1, 2, 3, 4].map((num) => (
+                <div
+                  key={num}
+                  className="video-card relative aspect-video rounded-2xl overflow-hidden bg-white/10 shadow-lg hover:shadow-xl transition-all group cursor-pointer"
+                  onClick={() => setSelectedVideo(`/videos/channel-${num}.mp4`)}
+                >
+                  <video
+                    src={`/videos/channel-${num}.mp4`}
+                    className="w-full h-full object-cover"
+                    muted
+                    playsInline
+                    loop
+                    preload="metadata"
+                    onMouseEnter={(e) => {
+                      const video = e.target as HTMLVideoElement
+                      video.play().catch(() => {})
+                    }}
+                    onMouseLeave={(e) => {
+                      const video = e.target as HTMLVideoElement
+                      video.pause()
+                      video.currentTime = 0
+                    }}
+                  />
+                  {/* Overlay с кнопкой воспроизведения */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent group-hover:from-black/80 transition-colors flex items-center justify-center pointer-events-none">
+                    <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all shadow-lg">
+                      <svg className="w-7 h-7 text-text-primary ml-1" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
 
         {/* Dev Section */}
@@ -279,6 +325,7 @@ function App() {
             <h2 className="section-title">IT-проекты</h2>
           </div>
           <div className="dev-grid grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+            {/* MakarovFlow Project */}
             <div className="dev-card glass rounded-3xl p-8 relative overflow-hidden transition-transform hover:-translate-y-1 reveal">
               <div className="dev-card-icon text-5xl mb-4">🧠</div>
               <h3 className="text-xl mb-3 font-display">MakarovFlow</h3>
@@ -290,18 +337,73 @@ function App() {
                 <span className="dev-tag text-xs px-3 py-1.5 bg-accent-soft text-accent rounded-full font-medium">AI</span>
                 <span className="dev-tag text-xs px-3 py-1.5 bg-accent-soft text-accent rounded-full font-medium">Школьный проект</span>
               </div>
+              {/* Скриншоты проекта - 3 экрана телефона */}
+              <div className="project-screenshots grid grid-cols-4 gap-3 mt-6">
+                {[1, 2, 3, 4].map((num) => (
+                  <div
+                    key={num}
+                    className="phone-mockup relative bg-gradient-to-b from-gray-100 to-gray-200 rounded-2xl p-1 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer"
+                    onClick={() => setSelectedImage(`/images/projects/makarovflow-${num}.jpg`)}
+                  >
+                    <img
+                      src={`/images/projects/makarovflow-${num}.jpg`}
+                      alt={`MakarovFlow скриншот ${num}`}
+                      className="w-full aspect-[9/19] object-cover object-top rounded-xl"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="90" height="190" viewBox="0 0 90 190"><rect fill="%23f3f4f6" width="90" height="190" rx="12"/><text x="45" y="95" text-anchor="middle" fill="%239ca3af" font-size="10">Скрин ' + num + '</text></svg>'
+                      }}
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
+
+            {/* SoloStyle Project */}
             <div className="dev-card glass rounded-3xl p-8 relative overflow-hidden transition-transform hover:-translate-y-1 reveal">
               <div className="dev-card-icon text-5xl mb-4">💼</div>
               <h3 className="text-xl mb-3 font-display">SoloStyle</h3>
               <p className="text-text-secondary text-sm leading-relaxed">
-                Приложение для западного рынка труда — аналог HH.ru. Люди находят исполнителей услуг за деньги, предприниматели находят клиентов.
+                Приложение для западного рынка труда — аналог HH.ru. Люди находят исполнителей услуг за деньги, предприниматели находят клиентов. Приложение написано на языке Swift для iOS. Приложение адаптировано под русский и английский языки.
               </p>
               <div className="dev-tags flex flex-wrap gap-2 mt-4">
                 <span className="dev-tag text-xs px-3 py-1.5 bg-accent-soft text-accent rounded-full font-medium">Стартап</span>
-                <span className="dev-tag text-xs px-3 py-1.5 bg-accent-soft text-accent rounded-full font-medium">Маркетплейс</span>
+                <span className="dev-tag text-xs px-3 py-1.5 bg-accent-soft text-accent rounded-full font-medium">AI</span>
+                <span className="dev-tag text-xs px-3 py-1.5 bg-accent-soft text-accent rounded-full font-medium">iOS</span>
+              </div>
+              {/* Скриншоты проекта - 4 экрана телефона */}
+              <div className="project-screenshots grid grid-cols-4 gap-3 mt-6">
+                {[1, 2, 3, 4].map((num) => (
+                  <div
+                    key={num}
+                    className="phone-mockup relative bg-gradient-to-b from-gray-100 to-gray-200 rounded-2xl p-1 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer"
+                    onClick={() => setSelectedImage(`/images/projects/solostyle-${num}.png`)}
+                  >
+                    <img
+                      src={`/images/projects/solostyle-${num}.png`}
+                      alt={`SoloStyle - ${num === 1 ? 'Calendar' : num === 2 ? 'Clients' : num === 3 ? 'Profile' : 'Settings'}`}
+                      className="w-full aspect-[9/19] object-cover object-top rounded-xl"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="90" height="190" viewBox="0 0 90 190"><rect fill="%23f3f4f6" width="90" height="190" rx="12"/><text x="45" y="95" text-anchor="middle" fill="%239ca3af" font-size="10">Скрин ' + num + '</text></svg>'
+                      }}
+                    />
+                  </div>
+                ))}
               </div>
             </div>
+          </div>
+
+          {/* Фото с разработки */}
+          <div className="dev-photos mt-12 max-w-6xl mx-auto reveal">
+            <p className="text-center text-text-muted text-sm mb-6">Процесс разработки</p>
+            <AnimatedGallery
+              images={[
+                { src: "/images/projects/dev-process-1.jpg", alt: "Процесс разработки 1" },
+                { src: "/images/projects/dev-process-2.jpg", alt: "Процесс разработки 2" },
+                { src: "/images/projects/dev-process-3.jpg", alt: "Процесс разработки 3" },
+                { src: "/images/projects/dev-process-4.jpg", alt: "Процесс разработки 4" },
+              ]}
+              autoplay
+            />
           </div>
         </section>
 
@@ -311,21 +413,75 @@ function App() {
             <p className="section-label text-accent text-xs font-semibold tracking-widest uppercase mb-2">Олимпиады</p>
             <h2 className="section-title">Достижения</h2>
           </div>
-          <div className="achievements-grid grid grid-cols-1 md:grid-cols-3 gap-5">
-            {[
-              { badge: "Призёр", badgeClass: "badge-gold", title: "Обществознание", desc: "Муниципальный этап ВСОШ" },
-              { badge: "Призёр", badgeClass: "badge-gold", title: "История", desc: "Муниципальный этап ВСОШ" },
-              { badge: "Призёр", badgeClass: "badge-gold", title: "Экономика", desc: "Муниципальный этап ВСОШ" },
-              { badge: "Призёр", badgeClass: "badge-silver", title: "Информатика", desc: "Школьный этап ВСОШ" },
-              { badge: "Призёр", badgeClass: "badge-silver", title: "Химия", desc: "Школьный этап ВСОШ" },
-              { badge: "Участник", badgeClass: "badge-silver", title: "Региональный этап", desc: "История, Общество, Экономика" },
-            ].map((item, idx) => (
-              <div key={idx} className="achievement-card bg-white rounded-2xl p-6 border border-black/4 transition-transform hover:-translate-y-1 reveal">
-                <span className={`achievement-badge ${item.badgeClass} inline-block px-3 py-1.5 rounded-full text-xs font-semibold mb-3`}>{item.badge}</span>
-                <div className="achievement-title font-semibold text-sm mb-1">{item.title}</div>
-                <div className="achievement-desc text-xs text-text-muted">{item.desc}</div>
-              </div>
-            ))}
+
+          {/* Региональный этап - главные достижения */}
+          <div className="mb-10 reveal">
+            <h3 className="text-lg font-display text-center mb-6 text-text-secondary">Региональный этап ВСОШ</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {[
+                { badge: "Участник", title: "История", year: "2024/25" },
+                { badge: "Участник", title: "Обществознание", year: "2024/25" },
+                { badge: "Участник", title: "Экономика", year: "2024/25" },
+              ].map((item, idx) => (
+                <div key={idx} className="achievement-card bg-gradient-to-br from-amber-500/15 to-yellow-400/10 rounded-2xl p-5 border border-amber-400/30 transition-transform hover:-translate-y-1">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="achievement-badge badge-gold inline-block px-3 py-1 rounded-full text-xs font-semibold">{item.badge}</span>
+                    <span className="text-xs text-amber-700/70">{item.year}</span>
+                  </div>
+                  <div className="achievement-title font-semibold text-sm text-amber-900">{item.title}</div>
+                  <div className="achievement-desc text-xs text-amber-700/60 mt-1">Региональный этап</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Муниципальный этап */}
+          <div className="mb-10 reveal">
+            <h3 className="text-lg font-display text-center mb-6 text-text-secondary">Муниципальный этап ВСОШ</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {[
+                { badge: "Призёр", title: "Обществознание", year: "2024/25" },
+                { badge: "Призёр", title: "История", year: "2024/25" },
+                { badge: "Призёр", title: "Экономика", year: "2024/25" },
+                { badge: "Призёр", title: "Обществознание", year: "2023/24" },
+                { badge: "Призёр", title: "История", year: "2023/24" },
+                { badge: "Призёр", title: "Экономика", year: "2023/24" },
+              ].map((item, idx) => (
+                <div key={idx} className="achievement-card bg-white rounded-2xl p-5 border border-amber-200/50 transition-transform hover:-translate-y-1">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="achievement-badge badge-gold inline-block px-3 py-1 rounded-full text-xs font-semibold">{item.badge}</span>
+                    <span className="text-xs text-amber-600/70">{item.year}</span>
+                  </div>
+                  <div className="achievement-title font-semibold text-sm text-amber-800">{item.title}</div>
+                  <div className="achievement-desc text-xs text-text-muted mt-1">Муниципальный этап</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Школьный этап */}
+          <div className="reveal">
+            <h3 className="text-lg font-display text-center mb-6 text-text-secondary">Школьный этап ВСОШ</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              {[
+                { badge: "Призёр", title: "Информатика", year: "2024/25" },
+                { badge: "Призёр", title: "Химия", year: "2024/25" },
+                { badge: "Победитель", title: "Обществознание", year: "2024/25" },
+                { badge: "Победитель", title: "История", year: "2024/25" },
+                { badge: "Победитель", title: "Экономика", year: "2024/25" },
+                { badge: "Победитель", title: "Обществознание", year: "2023/24" },
+                { badge: "Победитель", title: "История", year: "2023/24" },
+                { badge: "Победитель", title: "Экономика", year: "2023/24" },
+              ].map((item, idx) => (
+                <div key={idx} className="achievement-card bg-white rounded-xl p-4 border border-amber-100 transition-transform hover:-translate-y-1">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="achievement-badge badge-gold inline-block px-2 py-0.5 rounded-full text-[10px] font-semibold">{item.badge}</span>
+                  </div>
+                  <div className="achievement-title font-semibold text-xs text-amber-800">{item.title}</div>
+                  <div className="achievement-desc text-[10px] text-amber-600/60 mt-0.5">{item.year}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -346,12 +502,10 @@ function App() {
             {/* Grades Grid */}
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 reveal">
               {[
-                { subject: "Алгебра", grade: 3 },
                 { subject: "Английский язык", grade: 4 },
                 { subject: "Биология", grade: 5 },
                 { subject: "Вероятность и статистика", grade: 4 },
                 { subject: "География", grade: 4 },
-                { subject: "Геометрия", grade: 3 },
                 { subject: "Индивидуальный проект", grade: 5 },
                 { subject: "Информатика", grade: 5 },
                 { subject: "История", grade: 4 },
@@ -363,6 +517,8 @@ function App() {
                 { subject: "Физика", grade: 5 },
                 { subject: "Физическая культура", grade: 5 },
                 { subject: "Химия", grade: 4 },
+                { subject: "Алгебра", grade: 3 },
+                { subject: "Геометрия", grade: 3 },
               ].map((item, idx) => (
                 <div
                   key={idx}
@@ -390,47 +546,83 @@ function App() {
             <h2 className="section-title">Спорт и хобби</h2>
           </div>
 
-          <div className="sports-tabs flex justify-center gap-3 mb-12 flex-wrap reveal">
-            {["martial", "gym", "snowboard", "airsoft"].map((tab) => (
-              <button
-                key={tab}
-                className={`sports-tab px-5 py-3 border-none bg-transparent text-sm font-medium rounded-full transition-all ${
-                  activeTab === tab ? "bg-text-primary text-white" : "text-text-muted"
-                }`}
-                onClick={() => setActiveTab(tab)}
-              >
-                {tab === "martial" && "Единоборства"}
-                {tab === "gym" && "Тренажёрный зал"}
-                {tab === "snowboard" && "Сноуборд"}
-                {tab === "airsoft" && "Страйкбол"}
-              </button>
-            ))}
+          {/* Табы с эффектом жидкого стекла */}
+          <div className="sports-tabs-container flex justify-center mb-12 reveal">
+            <div className="sports-tabs-wrapper glass p-1.5 rounded-full flex gap-1">
+              {["martial", "gym", "snowboard", "airsoft"].map((tab) => (
+                <button
+                  key={tab}
+                  className={`sports-tab px-5 py-2.5 text-sm font-medium rounded-full transition-all duration-300 ${
+                    activeTab === tab
+                      ? "text-white shadow-lg"
+                      : "text-text-muted hover:text-text-secondary hover:bg-white/50"
+                  }`}
+                  style={activeTab === tab ? { backgroundColor: '#6366f1', color: '#ffffff' } : {}}
+                  onClick={() => setActiveTab(tab)}
+                >
+                  {tab === "martial" && "Единоборства"}
+                  {tab === "gym" && "Тренажёрный зал"}
+                  {tab === "snowboard" && "Сноуборд"}
+                  {tab === "airsoft" && "Страйкбол"}
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* Martial Arts Content */}
           {activeTab === "martial" && (
-            <div className="sports-content grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-12 items-center">
-              <div className="sports-text">
-                <h3 className="text-3xl mb-4 font-display">Дзюдо и бокс</h3>
-                <p className="text-text-secondary leading-relaxed mb-4">
-                  Занимался дзюдо с 4 до 11 лет. Побеждал на соревнованиях, в основном первые места. Получил жёлтый пояс в 9 лет.
-                </p>
-                <p className="text-text-secondary leading-relaxed mb-4">
-                  С 11 до 14 лет занимался боксом. Бросил, когда ушёл в тренажёрный зал на постоянной основе.
-                </p>
-                <div className="sports-stats flex gap-5 mt-6">
-                  <div className="sport-stat glass text-center p-4 rounded-2xl">
-                    <div className="sport-stat-value text-2xl text-accent">7</div>
-                    <div className="sport-stat-label text-xs text-text-muted mt-1">лет дзюдо</div>
+            <div className="sports-content">
+              <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-12 items-center mb-10">
+                <div className="sports-text">
+                  <h3 className="text-3xl mb-4 font-display">Дзюдо и бокс</h3>
+                  <p className="text-text-secondary leading-relaxed mb-4">
+                    Занимался дзюдо с 4 до 11 лет. Побеждал на соревнованиях, в основном первые места. Получил жёлтый пояс в 9 лет. Дзюдо дало мне дисциплину и понимание того, что победа достигается через труд.
+                  </p>
+                  <p className="text-text-secondary leading-relaxed mb-4">
+                    С 11 до 14 лет занимался боксом. Бросил, когда ушёл в тренажёрный зал на постоянной основе.
+                  </p>
+                  <div className="sports-stats flex gap-5 mt-6">
+                    <div className="sport-stat glass text-center p-4 rounded-2xl">
+                      <div className="sport-stat-value text-2xl text-accent">7</div>
+                      <div className="sport-stat-label text-xs text-text-muted mt-1">лет дзюдо</div>
+                    </div>
+                    <div className="sport-stat glass text-center p-4 rounded-2xl">
+                      <div className="sport-stat-value text-2xl text-accent">3</div>
+                      <div className="sport-stat-label text-xs text-text-muted mt-1">года бокса</div>
+                    </div>
                   </div>
-                  <div className="sport-stat glass text-center p-4 rounded-2xl">
-                    <div className="sport-stat-value text-2xl text-accent">3</div>
-                    <div className="sport-stat-label text-xs text-text-muted mt-1">года бокса</div>
+                  
+                  {/* Грамоты дзюдо - перемещены под статистику */}
+                  <div className="certificates-section mt-8">
+                    <h4 className="text-sm font-display mb-4 text-text-secondary">Грамоты и достижения</h4>
+                    <div className="certificates-gallery grid grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-2">
+                      {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => (
+                        <div
+                          key={num}
+                          className="certificate-thumb relative aspect-[3/4] rounded-lg overflow-hidden cursor-pointer group shadow-sm"
+                          onClick={() => setSelectedImage(`/images/certificates/cert-${num}.jpg`)}
+                        >
+                          <img
+                            src={`/images/certificates/cert-${num}.jpg`}
+                            alt={`Грамота ${num}`}
+                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                            onError={(e) => {
+                              (e.target as HTMLImageElement).src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="133" viewBox="0 0 100 133"><rect fill="%23fef3c7" width="100" height="133" rx="8"/><text x="50" y="60" text-anchor="middle" fill="%23d97706" font-size="10">Грамота</text><text x="50" y="75" text-anchor="middle" fill="%23d97706" font-size="10">' + num + '</text></svg>'
+                            }}
+                          />
+                          <div className="absolute inset-0 bg-accent/0 group-hover:bg-accent/30 transition-colors duration-300 flex items-center justify-center">
+                            <svg className="w-6 h-6 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                            </svg>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="sports-gallery flex justify-center">
-                <img src="/images/judo.jpg" alt="Дзюдо" className="w-full max-w-md rounded-2xl object-cover transition-transform hover:scale-105 cursor-pointer" />
+                <div className="sports-gallery flex justify-center">
+                  <img src="/images/judo.jpg" alt="Дзюдо" className="w-full max-w-md rounded-2xl object-cover transition-transform hover:scale-105 cursor-pointer" onClick={() => setSelectedImage('/images/judo.jpg')} />
+                </div>
               </div>
             </div>
           )}
@@ -462,7 +654,7 @@ function App() {
               <div className="sports-text">
                 <h3 className="text-3xl mb-4 font-display">Сноуборд</h3>
                 <p className="text-text-secondary leading-relaxed mb-4">
-                  Один сезон за плечами. Сейчас из-за учёбы не могу выехать покататься, но планирую продолжить.
+                  В первый раз я попробовал кататься в прошлом году. Это было больно и не приятно. Но каждый раз я испытывал чувство проигрыша и это заставляло меня каждый раз вставать и вставать пока снова не упаду. Мне помогал мой друг так что было весело учиться. И в первый день все было классно, мы хорошо проводили время в компании и я по немногу осваивал борд — но на следующий день все закончилось печально. Мы приехали на склон и с утра я почувствовал как научился управлять доской, она как будто слушалась меня и я начал рискованно ездить. Ну и как следовало ожидать...
                 </p>
                 <div className="sports-stats flex gap-5 mt-6">
                   <div className="sport-stat glass text-center p-4 rounded-2xl">
@@ -496,8 +688,33 @@ function App() {
                   </div>
                 </div>
               </div>
-              <div className="sports-gallery flex justify-center">
-                <img src="/images/airsoft-portrait.jpg" alt="Страйкбол" className="w-full max-w-md rounded-2xl object-cover transition-transform hover:scale-105 cursor-pointer" />
+              <div className="sports-gallery max-w-xl">
+                {/* Гармоничная компоновка: большое изображение в центре, два поменьше по бокам */}
+                <div className="grid grid-cols-[1fr_1.3fr_1fr] gap-3 items-center">
+                  {/* Левое изображение */}
+                  <img
+                    src="/images/airsoft-1.jpg"
+                    alt="Страйкбол 1"
+                    className="w-full aspect-[3/4] rounded-xl object-cover transition-all duration-300 hover:scale-105 hover:shadow-lg cursor-pointer"
+                    onClick={() => setSelectedImage('/images/airsoft-1.jpg')}
+                  />
+                  
+                  {/* Центральное изображение - акцент, больше */}
+                  <img
+                    src="/images/airsoft-2.jpg"
+                    alt="Страйкбол 2"
+                    className="w-full aspect-[2/3] rounded-2xl object-cover transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer"
+                    onClick={() => setSelectedImage('/images/airsoft-2.jpg')}
+                  />
+                  
+                  {/* Правое изображение */}
+                  <img
+                    src="/images/airsoft-3.jpg"
+                    alt="Страйкбол 3"
+                    className="w-full aspect-[3/4] rounded-xl object-cover transition-all duration-300 hover:scale-105 hover:shadow-lg cursor-pointer"
+                    onClick={() => setSelectedImage('/images/airsoft-3.jpg')}
+                  />
+                </div>
               </div>
             </div>
           )}
@@ -505,8 +722,8 @@ function App() {
 
         {/* Contact Section */}
         <section id="contact" className="contact-section text-center py-24 px-8">
-          <h2 className="contact-title mb-3 reveal">Давайте общаться</h2>
-          <p className="contact-subtitle text-text-secondary text-base mb-8 reveal">Открыт для новых проектов и знакомств</p>
+          <h2 className="contact-title mb-3 reveal">Мои контакты</h2>
+          <p className="contact-subtitle text-text-secondary text-base mb-8 reveal"></p>
           <div className="contact-links flex justify-center gap-4 flex-wrap reveal">
             <a href="#" className="contact-link glass inline-flex items-center gap-2 px-5 py-3.5 text-text-primary text-sm font-medium transition-transform hover:-translate-y-1">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
@@ -528,6 +745,53 @@ function App() {
           <p>© 2025 Роман Макаров</p>
         </footer>
       </div>
+
+      {/* Image Modal */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-[200] bg-black/90 flex items-center justify-center p-4 animate-fadeIn"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button
+            className="absolute top-6 right-6 text-white/80 hover:text-white transition-colors"
+            onClick={() => setSelectedImage(null)}
+          >
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          <img
+            src={selectedImage}
+            alt="Увеличенное изображение"
+            className="max-w-full max-h-[90vh] object-contain rounded-lg"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
+
+      {/* Video Modal */}
+      {selectedVideo && (
+        <div
+          className="fixed inset-0 z-[200] bg-black/95 flex items-center justify-center p-4 animate-fadeIn"
+          onClick={() => setSelectedVideo(null)}
+        >
+          <button
+            className="absolute top-6 right-6 text-white/80 hover:text-white transition-colors z-10"
+            onClick={() => setSelectedVideo(null)}
+          >
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          <video
+            src={selectedVideo}
+            className="max-w-full max-h-[90vh] rounded-lg"
+            controls
+            autoPlay
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
     </div>
   )
 }
