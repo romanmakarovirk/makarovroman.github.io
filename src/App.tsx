@@ -3,6 +3,9 @@ import { AnimatedGallery } from "./components/ui/animated-gallery"
 import { useState, useEffect } from "react"
 import "./index.css"
 
+// Base URL for assets (handles GitHub Pages subdirectory)
+const BASE = import.meta.env.BASE_URL
+
 function App() {
   const [activeTab, setActiveTab] = useState("martial")
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null)
@@ -87,7 +90,7 @@ function App() {
               </div>
             </div>
             <div className="hero-photo-wrapper relative opacity-0 animate-fadeIn" style={{animationDelay: '0.5s'}}>
-              <img src="/images/hero.jpg" alt="Роман Макаров" className="hero-photo w-full aspect-[4/5] object-cover rounded-3xl shadow-2xl" />
+              <img src={`${BASE}images/hero.jpg`} alt="Роман Макаров" className="hero-photo w-full aspect-[4/5] object-cover rounded-3xl shadow-2xl" />
               <div className="hero-decoration absolute -top-4 -right-4 w-24 h-24 rounded-full bg-gradient-to-br from-blue-300/60 to-purple-300/50 backdrop-blur-sm border border-white/40 -z-10"></div>
               <div className="hero-decoration-2 absolute bottom-8 -left-6 w-16 h-16 rounded-full bg-gradient-to-br from-yellow-300/50 to-red-300/40 backdrop-blur-sm border border-white/40 -z-10"></div>
             </div>
@@ -135,8 +138,8 @@ function App() {
                     Но ничего не вечно, и моё оборудование устарело уже года три назад, а новые законы по тарифам окончательно убили бы весь доход, который оставался. Так что на этом моя история с добычей криптовалюты закончилась. Но это было только начало моего пути по заработку денег.
                   </p>
                   <div className="photo-gallery flex gap-3 mt-6 overflow-x-auto pb-2">
-                    <img src="/images/mining-wallet.png" alt="Крипто-кошелёк" className="w-36 h-24 object-cover rounded-xl flex-shrink-0 transition-transform hover:scale-105 cursor-pointer" />
-                    <img src="/images/mining-childhood.jpg" alt="Детство" className="w-36 h-24 object-cover rounded-xl flex-shrink-0 transition-transform hover:scale-105 cursor-pointer" />
+                    <img src={`${BASE}images/mining-wallet.png`} alt="Крипто-кошелёк" className="w-36 h-24 object-cover rounded-xl flex-shrink-0 transition-transform hover:scale-105 cursor-pointer" />
+                    <img src={`${BASE}images/mining-childhood.jpg`} alt="Детство" className="w-36 h-24 object-cover rounded-xl flex-shrink-0 transition-transform hover:scale-105 cursor-pointer" />
                   </div>
                 </div>
                 <button 
@@ -179,7 +182,7 @@ function App() {
                     Огромный опыт получил тем летом. И мои навыки лжи прокачались, так как три месяца я сочинял историю, будто мне 18 и я в 11 классе, потому что мои коллеги не должны были знать о моём возрасте. Я очень благодарен папе, моему начальнику и коллегам за такой опыт работы и общения со взрослыми людьми на равных.
                   </p>
                   <div className="photo-gallery flex gap-3 mt-6 overflow-x-auto pb-2">
-                    <img src="/images/carwash.jpg" alt="Автомойка" className="w-36 h-24 object-cover rounded-xl flex-shrink-0 transition-transform hover:scale-105 cursor-pointer" />
+                    <img src={`${BASE}images/carwash.jpg`} alt="Автомойка" className="w-36 h-24 object-cover rounded-xl flex-shrink-0 transition-transform hover:scale-105 cursor-pointer" />
                   </div>
                 </div>
                 <button 
@@ -272,8 +275,8 @@ function App() {
               </a>
             </div>
             <div className="channel-gallery grid grid-cols-2 gap-4 reveal">
-              <img src="/images/channel-team.jpg" alt="Команда" className="w-full h-auto rounded-2xl transition-transform hover:scale-105 cursor-pointer" style={{ objectFit: 'contain' }} />
-              <img src="/images/channel-1.jpg" alt="Поездка" className="w-full h-auto rounded-2xl transition-transform hover:scale-105 cursor-pointer" style={{ objectFit: 'contain' }} />
+              <img src={`${BASE}images/channel-team.jpg`} alt="Команда" className="w-full h-auto rounded-2xl transition-transform hover:scale-105 cursor-pointer" style={{ objectFit: 'contain' }} />
+              <img src={`${BASE}images/channel-1.jpg`} alt="Поездка" className="w-full h-auto rounded-2xl transition-transform hover:scale-105 cursor-pointer" style={{ objectFit: 'contain' }} />
             </div>
           </div>
 
@@ -285,10 +288,10 @@ function App() {
                 <div
                   key={num}
                   className="video-card relative aspect-video rounded-2xl overflow-hidden bg-white/10 shadow-lg hover:shadow-xl transition-all group cursor-pointer"
-                  onClick={() => setSelectedVideo(`/videos/channel-${num}.mp4`)}
+                  onClick={() => setSelectedVideo(`${BASE}videos/channel-${num}.mp4`)}
                 >
                   <video
-                    src={`/videos/channel-${num}.mp4`}
+                    src={`${BASE}videos/channel-${num}.mp4`}
                     className="w-full h-full object-cover"
                     muted
                     playsInline
@@ -343,10 +346,10 @@ function App() {
                   <div
                     key={num}
                     className="phone-mockup relative bg-gradient-to-b from-gray-100 to-gray-200 rounded-2xl p-1 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer"
-                    onClick={() => setSelectedImage(`/images/projects/makarovflow-${num}.jpg`)}
+                    onClick={() => setSelectedImage(`${BASE}images/projects/makarovflow-${num}.jpg`)}
                   >
                     <img
-                      src={`/images/projects/makarovflow-${num}.jpg`}
+                      src={`${BASE}images/projects/makarovflow-${num}.jpg`}
                       alt={`MakarovFlow скриншот ${num}`}
                       className="w-full aspect-[9/19] object-cover object-top rounded-xl"
                       onError={(e) => {
@@ -376,10 +379,10 @@ function App() {
                   <div
                     key={num}
                     className="phone-mockup relative bg-gradient-to-b from-gray-100 to-gray-200 rounded-2xl p-1 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer"
-                    onClick={() => setSelectedImage(`/images/projects/solostyle-${num}.png`)}
+                    onClick={() => setSelectedImage(`${BASE}images/projects/solostyle-${num}.png`)}
                   >
                     <img
-                      src={`/images/projects/solostyle-${num}.png`}
+                      src={`${BASE}images/projects/solostyle-${num}.png`}
                       alt={`SoloStyle - ${num === 1 ? 'Calendar' : num === 2 ? 'Clients' : num === 3 ? 'Profile' : 'Settings'}`}
                       className="w-full aspect-[9/19] object-cover object-top rounded-xl"
                       onError={(e) => {
@@ -397,10 +400,10 @@ function App() {
             <p className="text-center text-text-muted text-sm mb-6">Процесс разработки</p>
             <AnimatedGallery
               images={[
-                { src: "/images/projects/dev-process-1.jpg", alt: "Процесс разработки 1" },
-                { src: "/images/projects/dev-process-2.jpg", alt: "Процесс разработки 2" },
-                { src: "/images/projects/dev-process-3.jpg", alt: "Процесс разработки 3" },
-                { src: "/images/projects/dev-process-4.jpg", alt: "Процесс разработки 4" },
+                { src: `${BASE}images/projects/dev-process-1.jpg`, alt: "Процесс разработки 1" },
+                { src: `${BASE}images/projects/dev-process-2.jpg`, alt: "Процесс разработки 2" },
+                { src: `${BASE}images/projects/dev-process-3.jpg`, alt: "Процесс разработки 3" },
+                { src: `${BASE}images/projects/dev-process-4.jpg`, alt: "Процесс разработки 4" },
               ]}
               autoplay
             />
@@ -600,10 +603,10 @@ function App() {
                         <div
                           key={num}
                           className="certificate-thumb relative aspect-[3/4] rounded-lg overflow-hidden cursor-pointer group shadow-sm"
-                          onClick={() => setSelectedImage(`/images/certificates/cert-${num}.jpg`)}
+                          onClick={() => setSelectedImage(`${BASE}images/certificates/cert-${num}.jpg`)}
                         >
                           <img
-                            src={`/images/certificates/cert-${num}.jpg`}
+                            src={`${BASE}images/certificates/cert-${num}.jpg`}
                             alt={`Грамота ${num}`}
                             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                             onError={(e) => {
@@ -621,7 +624,7 @@ function App() {
                   </div>
                 </div>
                 <div className="sports-gallery flex justify-center">
-                  <img src="/images/judo.jpg" alt="Дзюдо" className="w-full max-w-md rounded-2xl object-cover transition-transform hover:scale-105 cursor-pointer" onClick={() => setSelectedImage('/images/judo.jpg')} />
+                  <img src={`${BASE}images/judo.jpg`} alt="Дзюдо" className="w-full max-w-md rounded-2xl object-cover transition-transform hover:scale-105 cursor-pointer" onClick={() => setSelectedImage(`${BASE}images/judo.jpg`)} />
                 </div>
               </div>
             </div>
@@ -643,7 +646,7 @@ function App() {
                 </div>
               </div>
               <div className="sports-gallery flex justify-center">
-                <img src="/images/judo-2.jpg" alt="Тренировка" className="w-full max-w-md rounded-2xl object-cover transition-transform hover:scale-105 cursor-pointer" />
+                <img src={`${BASE}images/judo-2.jpg`} alt="Тренировка" className="w-full max-w-md rounded-2xl object-cover transition-transform hover:scale-105 cursor-pointer" />
               </div>
             </div>
           )}
@@ -664,7 +667,7 @@ function App() {
                 </div>
               </div>
               <div className="sports-gallery flex justify-center">
-                <img src="/images/snowboard-1.jpg" alt="Сноуборд с друзьями" className="w-full max-w-md rounded-2xl object-cover transition-transform hover:scale-105 cursor-pointer" />
+                <img src={`${BASE}images/snowboard-1.jpg`} alt="Сноуборд с друзьями" className="w-full max-w-md rounded-2xl object-cover transition-transform hover:scale-105 cursor-pointer" />
               </div>
             </div>
           )}
@@ -693,26 +696,26 @@ function App() {
                 <div className="grid grid-cols-[1fr_1.3fr_1fr] gap-3 items-center">
                   {/* Левое изображение */}
                   <img
-                    src="/images/airsoft-1.jpg"
+                    src={`${BASE}images/airsoft-1.jpg`}
                     alt="Страйкбол 1"
                     className="w-full aspect-[3/4] rounded-xl object-cover transition-all duration-300 hover:scale-105 hover:shadow-lg cursor-pointer"
-                    onClick={() => setSelectedImage('/images/airsoft-1.jpg')}
+                    onClick={() => setSelectedImage(`${BASE}images/airsoft-1.jpg`)}
                   />
                   
                   {/* Центральное изображение - акцент, больше */}
                   <img
-                    src="/images/airsoft-2.jpg"
+                    src={`${BASE}images/airsoft-2.jpg`}
                     alt="Страйкбол 2"
                     className="w-full aspect-[2/3] rounded-2xl object-cover transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer"
-                    onClick={() => setSelectedImage('/images/airsoft-2.jpg')}
+                    onClick={() => setSelectedImage(`${BASE}images/airsoft-2.jpg`)}
                   />
                   
                   {/* Правое изображение */}
                   <img
-                    src="/images/airsoft-3.jpg"
+                    src={`${BASE}images/airsoft-3.jpg`}
                     alt="Страйкбол 3"
                     className="w-full aspect-[3/4] rounded-xl object-cover transition-all duration-300 hover:scale-105 hover:shadow-lg cursor-pointer"
-                    onClick={() => setSelectedImage('/images/airsoft-3.jpg')}
+                    onClick={() => setSelectedImage(`${BASE}images/airsoft-3.jpg`)}
                   />
                 </div>
               </div>
