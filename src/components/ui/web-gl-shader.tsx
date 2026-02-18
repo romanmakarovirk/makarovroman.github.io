@@ -42,22 +42,29 @@ export function WebGLShader() {
 
       void main() {
         vec2 p = (gl_FragCoord.xy * 2.0 - resolution) / min(resolution.x, resolution.y);
-        
-        float d = length(p) * distortion;
-        
-        float rx = p.x * (1.0 + d);
-        float gx = p.x;
-        float bx = p.x * (1.0 - d);
 
-        float r = 0.05 / abs(p.y + sin((rx + time) * xScale) * yScale);
-        float g = 0.05 / abs(p.y + sin((gx + time) * xScale) * yScale);
-        float b = 0.05 / abs(p.y + sin((bx + time) * xScale) * yScale);
-        
-        // Make colors visible on white background - use darker, more saturated colors
-        vec3 waveColor = vec3(r, g, b) * 2.0;
-        vec3 bgColor = vec3(1.0); // White background
+        float d = length(p) * distortion;
+
+        // Three wave positions offset from each other
+        float w1x = p.x * (1.0 + d);
+        float w2x = p.x;
+        float w3x = p.x * (1.0 - d);
+
+        float wave1 = 0.05 / abs(p.y + sin((w1x + time) * xScale) * yScale);
+        float wave2 = 0.05 / abs(p.y + sin((w2x + time) * xScale) * yScale);
+        float wave3 = 0.05 / abs(p.y + sin((w3x + time) * xScale) * yScale);
+
+        // Blue (0.0, 0.2, 0.8), Red (0.9, 0.1, 0.1), White (0.9, 0.9, 0.9)
+        vec3 blue = vec3(0.0, 0.2, 0.8);
+        vec3 red = vec3(0.9, 0.1, 0.1);
+        vec3 white = vec3(0.9, 0.9, 0.9);
+
+        vec3 waveColor = wave1 * blue + wave2 * red + wave3 * white;
+        waveColor *= 2.0;
+
+        vec3 bgColor = vec3(1.0);
         vec3 finalColor = mix(bgColor, waveColor, min(1.0, length(waveColor) * 0.5));
-        
+
         gl_FragColor = vec4(finalColor, 1.0);
       }
     `

@@ -327,6 +327,62 @@ function App() {
             <p className="section-label text-accent text-xs font-semibold tracking-widest uppercase mb-2">Разработка</p>
             <h2 className="section-title">IT-проекты</h2>
           </div>
+          {/* Hydra Project — Featured */}
+          <div className="max-w-6xl mx-auto mb-8 reveal">
+            <div className="dev-card glass rounded-3xl p-8 md:p-10 relative overflow-hidden transition-transform hover:-translate-y-1">
+              <div className="flex flex-col md:flex-row gap-8">
+                <div className="flex-1">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="dev-card-icon text-5xl">🐍</div>
+                    <div>
+                      <h3 className="text-2xl font-display">Hydra</h3>
+                      <p className="text-xs text-accent font-semibold">Лучший проект смены</p>
+                    </div>
+                  </div>
+                  <p className="text-text-secondary text-sm leading-relaxed mb-4">
+                    Интеллектуальный помощник для создания учебных материалов с помощью LLM-моделей. Реализован в учебном центре «Персей» на курсе «Искусственный интеллект и машинное обучение». Проект был отмечен наградой от ЭН+ на итоговой защите с представителями компании.
+                  </p>
+                  <p className="text-text-secondary text-sm leading-relaxed mb-4">
+                    Цель — создать продукт, который делает сжатый конспект лекций, используя лишь аудиозапись. Продукт работает как пайплайн из нескольких нейросетей: <span className="text-accent font-medium">Whisper large-v3</span> для перевода аудио в текст, <span className="text-accent font-medium">LanguageTool</span> для исправления ошибок, и <span className="text-accent font-medium">Qwen3-4B-Instruct-2507</span> для сжатия ~30 000 токенов сырого текста в готовый конспект.
+                  </p>
+                  <p className="text-text-secondary text-sm leading-relaxed mb-5">
+                    Мы достигли готового продукта, который работает локально на наших серверах без внешних облачных LLM-моделей — это делает его бесплатным и безопасным, так как данные не уходят с сервера.
+                  </p>
+                  <div className="dev-tags flex flex-wrap gap-2">
+                    <span className="dev-tag text-xs px-3 py-1.5 bg-accent-soft text-accent rounded-full font-medium">AI/ML</span>
+                    <span className="dev-tag text-xs px-3 py-1.5 bg-accent-soft text-accent rounded-full font-medium">Whisper</span>
+                    <span className="dev-tag text-xs px-3 py-1.5 bg-accent-soft text-accent rounded-full font-medium">LLM</span>
+                    <span className="dev-tag text-xs px-3 py-1.5 bg-accent-soft text-accent rounded-full font-medium">Python</span>
+                    <span className="dev-tag text-xs px-3 py-1.5 bg-accent-soft text-accent rounded-full font-medium">ЭН+ Награда</span>
+                  </div>
+                </div>
+              </div>
+              {/* Фото с защиты */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+                <div
+                  className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer"
+                  onClick={() => setSelectedImage(`${BASE}images/projects/hydra-1.jpg`)}
+                >
+                  <img
+                    src={`${BASE}images/projects/hydra-1.jpg`}
+                    alt="Защита проекта Hydra — презентация"
+                    className="w-full aspect-[16/10] object-cover"
+                  />
+                </div>
+                <div
+                  className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer"
+                  onClick={() => setSelectedImage(`${BASE}images/projects/hydra-2.jpg`)}
+                >
+                  <img
+                    src={`${BASE}images/projects/hydra-2.jpg`}
+                    alt="Награждение от ЭН+ за проект Hydra"
+                    className="w-full aspect-[16/10] object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div className="dev-grid grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
             {/* MakarovFlow Project */}
             <div className="dev-card glass rounded-3xl p-8 relative overflow-hidden transition-transform hover:-translate-y-1 reveal">
@@ -423,16 +479,22 @@ function App() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
                 { badge: "Участник", title: "История", year: "2024/25" },
-                { badge: "Участник", title: "Обществознание", year: "2024/25" },
+                { badge: "Призёр", title: "Обществознание", year: "2024/25" },
                 { badge: "Участник", title: "Экономика", year: "2024/25" },
               ].map((item, idx) => (
-                <div key={idx} className="achievement-card bg-gradient-to-br from-amber-500/15 to-yellow-400/10 rounded-2xl p-5 border border-amber-400/30 transition-transform hover:-translate-y-1">
+                <div key={idx} className={`achievement-card rounded-2xl p-5 border transition-transform hover:-translate-y-1 ${
+                  item.badge === "Призёр" ? "bg-gradient-to-br from-[#7c7fff]/15 to-[#7c7fff]/5 border-[#7c7fff]/30" :
+                  "bg-gradient-to-br from-gray-200/40 to-gray-100/30 border-gray-300/40"
+                }`}>
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="achievement-badge badge-gold inline-block px-3 py-1 rounded-full text-xs font-semibold">{item.badge}</span>
-                    <span className="text-xs text-amber-700/70">{item.year}</span>
+                    <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold text-white ${
+                      item.badge === "Призёр" ? "bg-gradient-to-r from-[#7c7fff] to-[#6a6aee]" :
+                      "bg-gradient-to-r from-gray-400 to-gray-500"
+                    }`}>{item.badge}</span>
+                    <span className="text-xs text-text-muted">{item.year}</span>
                   </div>
-                  <div className="achievement-title font-semibold text-sm text-amber-900">{item.title}</div>
-                  <div className="achievement-desc text-xs text-amber-700/60 mt-1">Региональный этап</div>
+                  <div className={`achievement-title font-semibold text-sm ${item.badge === "Призёр" ? "text-[#5a5abf]" : "text-text-secondary"}`}>{item.title}</div>
+                  <div className="achievement-desc text-xs text-text-muted mt-1">Региональный этап</div>
                 </div>
               ))}
             </div>
@@ -450,12 +512,12 @@ function App() {
                 { badge: "Призёр", title: "История", year: "2023/24" },
                 { badge: "Призёр", title: "Экономика", year: "2023/24" },
               ].map((item, idx) => (
-                <div key={idx} className="achievement-card bg-white rounded-2xl p-5 border border-amber-200/50 transition-transform hover:-translate-y-1">
+                <div key={idx} className="achievement-card bg-gradient-to-br from-[#7c7fff]/10 to-[#7c7fff]/5 rounded-2xl p-5 border border-[#7c7fff]/20 transition-transform hover:-translate-y-1">
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="achievement-badge badge-gold inline-block px-3 py-1 rounded-full text-xs font-semibold">{item.badge}</span>
-                    <span className="text-xs text-amber-600/70">{item.year}</span>
+                    <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold text-white bg-gradient-to-r from-[#7c7fff] to-[#6a6aee]">{item.badge}</span>
+                    <span className="text-xs text-text-muted">{item.year}</span>
                   </div>
-                  <div className="achievement-title font-semibold text-sm text-amber-800">{item.title}</div>
+                  <div className="achievement-title font-semibold text-sm text-[#5a5abf]">{item.title}</div>
                   <div className="achievement-desc text-xs text-text-muted mt-1">Муниципальный этап</div>
                 </div>
               ))}
@@ -476,12 +538,18 @@ function App() {
                 { badge: "Победитель", title: "История", year: "2023/24" },
                 { badge: "Победитель", title: "Экономика", year: "2023/24" },
               ].map((item, idx) => (
-                <div key={idx} className="achievement-card bg-white rounded-xl p-4 border border-amber-100 transition-transform hover:-translate-y-1">
+                <div key={idx} className={`achievement-card rounded-xl p-4 border transition-transform hover:-translate-y-1 ${
+                  item.badge === "Победитель" ? "bg-gradient-to-br from-[#7c7fff]/20 to-[#5a5abf]/10 border-[#7c7fff]/30" :
+                  "bg-gradient-to-br from-[#7c7fff]/10 to-[#7c7fff]/5 border-[#7c7fff]/15"
+                }`}>
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="achievement-badge badge-gold inline-block px-2 py-0.5 rounded-full text-[10px] font-semibold">{item.badge}</span>
+                    <span className={`inline-block px-2 py-0.5 rounded-full text-[10px] font-semibold text-white ${
+                      item.badge === "Победитель" ? "bg-gradient-to-r from-[#6a5acd] to-[#7c7fff]" :
+                      "bg-gradient-to-r from-[#7c7fff] to-[#6a6aee]"
+                    }`}>{item.badge}</span>
                   </div>
-                  <div className="achievement-title font-semibold text-xs text-amber-800">{item.title}</div>
-                  <div className="achievement-desc text-[10px] text-amber-600/60 mt-0.5">{item.year}</div>
+                  <div className={`achievement-title font-semibold text-xs ${item.badge === "Победитель" ? "text-[#4a4a9f]" : "text-[#5a5abf]"}`}>{item.title}</div>
+                  <div className="achievement-desc text-[10px] text-text-muted mt-0.5">{item.year}</div>
                 </div>
               ))}
             </div>
@@ -520,8 +588,6 @@ function App() {
                 { subject: "Физика", grade: 5 },
                 { subject: "Физическая культура", grade: 5 },
                 { subject: "Химия", grade: 4 },
-                { subject: "Алгебра", grade: 3 },
-                { subject: "Геометрия", grade: 3 },
               ].map((item, idx) => (
                 <div
                   key={idx}
