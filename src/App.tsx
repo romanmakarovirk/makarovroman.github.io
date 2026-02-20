@@ -87,10 +87,13 @@ function App() {
                 <span className="hero-tag glass">💻 Разработчик</span>
                 <span className="hero-tag glass">🎬 Контент-мейкер</span>
                 <span className="hero-tag glass">🏋️ Спортсмен</span>
+                <span className="hero-tag glass">🏆 Призёр ВСОШ</span>
+                <span className="hero-tag glass">⭐ Награждён от ЭН+</span>
+                <span className="hero-tag glass">🚀 Участник «Большие вызовы» Сириус</span>
               </div>
             </div>
             <div className="hero-photo-wrapper relative opacity-0 animate-fadeIn" style={{animationDelay: '0.5s'}}>
-              <img src={`${BASE}images/hero.jpg`} alt="Роман Макаров" className="hero-photo w-full aspect-[4/5] object-cover rounded-3xl shadow-2xl" />
+              <img src={`${BASE}images/hero.webp`} alt="Роман Макаров" className="hero-photo w-full aspect-[4/5] object-cover rounded-3xl shadow-2xl" />
               <div className="hero-decoration absolute -top-4 -right-4 w-24 h-24 rounded-full bg-gradient-to-br from-blue-300/60 to-purple-300/50 backdrop-blur-sm border border-white/40 -z-10"></div>
               <div className="hero-decoration-2 absolute bottom-8 -left-6 w-16 h-16 rounded-full bg-gradient-to-br from-yellow-300/50 to-red-300/40 backdrop-blur-sm border border-white/40 -z-10"></div>
             </div>
@@ -138,8 +141,8 @@ function App() {
                     Но ничего не вечно, и моё оборудование устарело уже года три назад, а новые законы по тарифам окончательно убили бы весь доход, который оставался. Так что на этом моя история с добычей криптовалюты закончилась. Но это было только начало моего пути по заработку денег.
                   </p>
                   <div className="photo-gallery flex gap-3 mt-6 overflow-x-auto pb-2">
-                    <img src={`${BASE}images/mining-wallet.png`} alt="Крипто-кошелёк" className="w-36 h-24 object-cover rounded-xl flex-shrink-0 transition-transform hover:scale-105 cursor-pointer" />
-                    <img src={`${BASE}images/mining-childhood.jpg`} alt="Детство" className="w-36 h-24 object-cover rounded-xl flex-shrink-0 transition-transform hover:scale-105 cursor-pointer" />
+                    <img src={`${BASE}images/mining-wallet.webp`} alt="Крипто-кошелёк" className="w-36 h-24 object-cover rounded-xl flex-shrink-0 transition-transform hover:scale-105 cursor-pointer" loading="lazy" />
+                    <img src={`${BASE}images/mining-childhood.webp`} alt="Детство" className="w-36 h-24 object-cover rounded-xl flex-shrink-0 transition-transform hover:scale-105 cursor-pointer" loading="lazy" />
                   </div>
                 </div>
                 <button 
@@ -182,7 +185,7 @@ function App() {
                     Огромный опыт получил тем летом. И мои навыки лжи прокачались, так как три месяца я сочинял историю, будто мне 18 и я в 11 классе, потому что мои коллеги не должны были знать о моём возрасте. Я очень благодарен папе, моему начальнику и коллегам за такой опыт работы и общения со взрослыми людьми на равных.
                   </p>
                   <div className="photo-gallery flex gap-3 mt-6 overflow-x-auto pb-2">
-                    <img src={`${BASE}images/carwash.jpg`} alt="Автомойка" className="w-36 h-24 object-cover rounded-xl flex-shrink-0 transition-transform hover:scale-105 cursor-pointer" />
+                    <img src={`${BASE}images/carwash.webp`} alt="Автомойка" className="w-auto h-36 object-contain rounded-xl flex-shrink-0 transition-transform hover:scale-105 cursor-pointer" onClick={() => setSelectedImage(`${BASE}images/carwash.webp`)} loading="lazy" />
                   </div>
                 </div>
                 <button 
@@ -233,8 +236,11 @@ function App() {
               </div>
               <div className="story-content">
                 <h3 className="story-heading">Сегодня</h3>
-                <p className="story-preview text-text-secondary text-sm leading-relaxed">
+                <p className="story-preview text-text-secondary text-sm leading-relaxed mb-3">
                   Поступаю в «Точку будущего» в Иркутске. Создаю IT-проекты, развиваю канал RZ_RM с командой из 9 человек, участвую в олимпиадах. Занимаюсь в тренажёрном зале, катаюсь на сноуборде, играю в страйкбол с друзьями.
+                </p>
+                <p className="text-text-secondary text-sm leading-relaxed">
+                  Принимал участие в смене «Искусственный интеллект и машинное обучение» в Персее, успешно защитил проект и получил награду от ЭН+. Стал призёром ВСОШ регионального этапа по Обществознанию и участником ВСОШ по Экономике и Истории. Принимаю участие в конкурсе «Большие вызовы» Сириус. А также защищаю проект на проектно-исследовательском форуме «Точка научного старта».
                 </p>
               </div>
             </div>
@@ -275,8 +281,8 @@ function App() {
               </a>
             </div>
             <div className="channel-gallery grid grid-cols-2 gap-4 reveal">
-              <img src={`${BASE}images/channel-team.jpg`} alt="Команда" className="w-full h-auto rounded-2xl transition-transform hover:scale-105 cursor-pointer" style={{ objectFit: 'contain' }} />
-              <img src={`${BASE}images/channel-1.jpg`} alt="Поездка" className="w-full h-auto rounded-2xl transition-transform hover:scale-105 cursor-pointer" style={{ objectFit: 'contain' }} />
+              <img src={`${BASE}images/channel-team.webp`} alt="Команда" className="w-full h-auto rounded-2xl transition-transform hover:scale-105 cursor-pointer" style={{ objectFit: 'contain' }} loading="lazy" />
+              <img src={`${BASE}images/channel-1.webp`} alt="Поездка" className="w-full h-auto rounded-2xl transition-transform hover:scale-105 cursor-pointer" style={{ objectFit: 'contain' }} loading="lazy" />
             </div>
           </div>
 
@@ -321,6 +327,122 @@ function App() {
           </div>
         </section>
 
+        {/* Persey Section */}
+        <section id="persey" className="bg-[#f5f5f0] rounded-[32px] p-12 md:p-16 my-12 mx-auto max-w-6xl relative overflow-hidden">
+          {/* Декоративные элементы */}
+          <div className="absolute -top-16 -right-16 w-80 h-80 rounded-full bg-gradient-to-br from-[#7c7fff]/15 to-purple-400/10 blur-2xl"></div>
+          <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-gradient-to-tr from-blue-400/10 to-cyan-300/8 blur-2xl"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-[#7c7fff]/5 to-transparent blur-3xl"></div>
+
+          <div className="relative z-10">
+            <div className="section-header text-center mb-12 reveal">
+              <p className="section-label text-accent text-xs font-semibold tracking-widest uppercase mb-2">Образование</p>
+              <h2 className="section-title">Поездка в «Персей»</h2>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-10 items-start">
+              {/* Текст слева */}
+              <div className="reveal">
+                <p className="text-text-secondary text-sm leading-relaxed mb-4">
+                  Про «Персей» я узнал случайно, когда начал думать, как получить знания, которые дополнили бы моё портфолио для «Точки Будущего». На сайте центра меня очень заинтересовала программа <span className="text-accent font-medium">«Искусственный интеллект и машинное обучение»</span> — я подал заявку, и меня взяли.
+                </p>
+                <p className="text-text-secondary text-sm leading-relaxed mb-4">
+                  После приезда я сразу почувствовал уровень, который сильно отличался от школьного. Занятия были интересные, педагоги работали по профессии в топовых компаниях и учились в московских вузах. Неделю мы изучали машинное обучение и создание своих LLM-моделей.
+                </p>
+                <p className="text-text-secondary text-sm leading-relaxed mb-4">
+                  После недели активной подготовки мы распределились по командам, и нам дали проекты на выбор — наш выбор пал на <span className="text-accent font-medium">«Интеллектуальный помощник для создания учебных материалов»</span>. Мы очень переживали, потому что на итоговой защите были эксперты из топовых российских IT-компаний.
+                </p>
+                <p className="text-text-secondary text-sm leading-relaxed mb-4">
+                  После выбора темы началась работа — это было дико интересно. Я был разработчиком ПО, а мой напарник тестировал LLM-модели. Первая задача — найти способ преобразовать аудиофайл в текст локально, без сторонних AI-инструментов. Мы долго тестировали модели и остановились на <span className="text-accent font-medium">Whisper large-v3</span>.
+                </p>
+                <p className="text-text-muted text-sm leading-relaxed">
+                  Подробнее о проекте и о том, как нас выбрали представители ЭН+, — в блоке Hydra ниже.
+                </p>
+
+                {/* Статистика */}
+                <div className="flex gap-3 mt-6">
+                  <div className="bg-white rounded-2xl p-4 text-center flex-1 shadow-sm border border-black/5">
+                    <div className="text-2xl text-accent font-display">2</div>
+                    <div className="text-[10px] text-text-muted uppercase tracking-wider mt-1">недели</div>
+                  </div>
+                  <div className="bg-white rounded-2xl p-4 text-center flex-1 shadow-sm border border-black/5">
+                    <div className="text-2xl text-text-primary font-display">AI/ML</div>
+                    <div className="text-[10px] text-text-muted uppercase tracking-wider mt-1">направление</div>
+                  </div>
+                  <div className="bg-gradient-to-br from-[#7c7fff] to-[#6a5acd] rounded-2xl p-4 text-center flex-1 shadow-md">
+                    <div className="text-2xl text-white font-display">1</div>
+                    <div className="text-[10px] text-white/70 uppercase tracking-wider mt-1">место</div>
+                  </div>
+                </div>
+
+                {/* Грамота */}
+                <div
+                  className="mt-4 max-w-[280px] rounded-2xl overflow-hidden shadow-md cursor-pointer group"
+                  onClick={() => setSelectedImage(`${BASE}images/projects/Грамота.webp`)}
+                >
+                  <img
+                    src={`${BASE}images/projects/Грамота.webp`}
+                    alt="Грамота от ЭН+"
+                    className="w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+
+              {/* Фотомозаика справа */}
+              <div className="reveal">
+                <div className="grid grid-cols-2 gap-3">
+                  <div
+                    className="rounded-2xl overflow-hidden cursor-pointer group col-span-2 shadow-lg"
+                    onClick={() => setSelectedImage(`${BASE}images/projects/persey-3.webp`)}
+                  >
+                    <img
+                      src={`${BASE}images/projects/persey-3.webp`}
+                      alt="Эксперимент с нейроинтерфейсом"
+                      className="w-full aspect-[16/9] object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div
+                    className="rounded-2xl overflow-hidden cursor-pointer group shadow-md"
+                    onClick={() => setSelectedImage(`${BASE}images/projects/persey-1.webp`)}
+                  >
+                    <img
+                      src={`${BASE}images/projects/persey-1.webp`}
+                      alt="Работа с напарником"
+                      className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div
+                    className="rounded-2xl overflow-hidden cursor-pointer group shadow-md"
+                    onClick={() => setSelectedImage(`${BASE}images/projects/persey-4.webp`)}
+                  >
+                    <img
+                      src={`${BASE}images/projects/persey-4.webp`}
+                      alt="Написание кода"
+                      className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div
+                    className="rounded-2xl overflow-hidden cursor-pointer group col-span-2 shadow-lg"
+                    onClick={() => setSelectedImage(`${BASE}images/projects/persey-2.webp`)}
+                  >
+                    <img
+                      src={`${BASE}images/projects/persey-2.webp`}
+                      alt="Работа в команде"
+                      className="w-full aspect-[16/9] object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
         {/* Dev Section */}
         <section id="dev" className="dev-section py-16 px-8">
           <div className="section-header text-center mb-12 reveal">
@@ -329,54 +451,48 @@ function App() {
           </div>
           {/* Hydra Project — Featured */}
           <div className="max-w-6xl mx-auto mb-8 reveal">
-            <div className="dev-card glass rounded-3xl p-8 md:p-10 relative overflow-hidden transition-transform hover:-translate-y-1">
-              <div className="flex flex-col md:flex-row gap-8">
-                <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="dev-card-icon text-5xl">🐍</div>
-                    <div>
-                      <h3 className="text-2xl font-display">Hydra</h3>
-                      <p className="text-xs text-accent font-semibold">Лучший проект смены</p>
-                    </div>
-                  </div>
-                  <p className="text-text-secondary text-sm leading-relaxed mb-4">
-                    Интеллектуальный помощник для создания учебных материалов с помощью LLM-моделей. Реализован в учебном центре «Персей» на курсе «Искусственный интеллект и машинное обучение». Проект был отмечен наградой от ЭН+ на итоговой защите с представителями компании.
-                  </p>
-                  <p className="text-text-secondary text-sm leading-relaxed mb-4">
-                    Цель — создать продукт, который делает сжатый конспект лекций, используя лишь аудиозапись. Продукт работает как пайплайн из нескольких нейросетей: <span className="text-accent font-medium">Whisper large-v3</span> для перевода аудио в текст, <span className="text-accent font-medium">LanguageTool</span> для исправления ошибок, и <span className="text-accent font-medium">Qwen3-4B-Instruct-2507</span> для сжатия ~30 000 токенов сырого текста в готовый конспект.
-                  </p>
-                  <p className="text-text-secondary text-sm leading-relaxed mb-5">
-                    Мы достигли готового продукта, который работает локально на наших серверах без внешних облачных LLM-моделей — это делает его бесплатным и безопасным, так как данные не уходят с сервера.
-                  </p>
-                  <div className="dev-tags flex flex-wrap gap-2">
-                    <span className="dev-tag text-xs px-3 py-1.5 bg-accent-soft text-accent rounded-full font-medium">AI/ML</span>
-                    <span className="dev-tag text-xs px-3 py-1.5 bg-accent-soft text-accent rounded-full font-medium">Whisper</span>
-                    <span className="dev-tag text-xs px-3 py-1.5 bg-accent-soft text-accent rounded-full font-medium">LLM</span>
-                    <span className="dev-tag text-xs px-3 py-1.5 bg-accent-soft text-accent rounded-full font-medium">Python</span>
-                    <span className="dev-tag text-xs px-3 py-1.5 bg-accent-soft text-accent rounded-full font-medium">ЭН+ Награда</span>
-                  </div>
-                </div>
+            <div className="dev-card glass rounded-3xl p-8 relative overflow-hidden transition-transform hover:-translate-y-1">
+              <div className="flex items-center gap-3 mb-4">
+                <h3 className="text-xl font-display">Hydra</h3>
+                <span className="text-[10px] px-2 py-0.5 rounded-full font-semibold text-white bg-gradient-to-r from-[#6a5acd] to-[#7c7fff]">Лучший проект смены</span>
+              </div>
+              <p className="text-text-secondary text-sm leading-relaxed mb-3">
+                Интеллектуальный помощник для создания учебных материалов с помощью LLM-моделей. Реализован в учебном центре «Персей» на курсе «Искусственный интеллект и машинное обучение». Проект отмечен наградой от ЭН+ на итоговой защите с представителями компании.
+              </p>
+              <p className="text-text-secondary text-sm leading-relaxed mb-3">
+                Цель — создать продукт, который делает сжатый конспект лекций, используя лишь аудиозапись. Продукт работает как пайплайн из нескольких нейросетей: <span className="text-accent font-medium">Whisper large-v3</span> для перевода аудио в текст, <span className="text-accent font-medium">LanguageTool</span> для исправления ошибок, и <span className="text-accent font-medium">Qwen3-4B-Instruct-2507</span> для сжатия ~30 000 токенов сырого текста в готовый конспект.
+              </p>
+              <p className="text-text-secondary text-sm leading-relaxed">
+                Мы достигли готового продукта, который работает локально без внешних облачных LLM-моделей — бесплатно и безопасно, данные не уходят с сервера.
+              </p>
+              <div className="dev-tags flex flex-wrap gap-2 mt-4">
+                <span className="dev-tag text-xs px-3 py-1.5 bg-accent-soft text-accent rounded-full font-medium">AI/ML</span>
+                <span className="dev-tag text-xs px-3 py-1.5 bg-accent-soft text-accent rounded-full font-medium">Whisper</span>
+                <span className="dev-tag text-xs px-3 py-1.5 bg-accent-soft text-accent rounded-full font-medium">LLM</span>
+                <span className="dev-tag text-xs px-3 py-1.5 bg-accent-soft text-accent rounded-full font-medium">Python</span>
               </div>
               {/* Фото с защиты */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-6">
                 <div
-                  className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer"
-                  onClick={() => setSelectedImage(`${BASE}images/projects/hydra-1.jpg`)}
+                  className="rounded-2xl overflow-hidden bg-gradient-to-b from-gray-100 to-gray-200 p-1 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer"
+                  onClick={() => setSelectedImage(`${BASE}images/projects/hydra-1.webp`)}
                 >
                   <img
-                    src={`${BASE}images/projects/hydra-1.jpg`}
+                    src={`${BASE}images/projects/hydra-1.webp`}
                     alt="Защита проекта Hydra — презентация"
-                    className="w-full aspect-[16/10] object-cover"
+                    className="w-full aspect-[16/10] object-cover rounded-xl"
+                    loading="lazy"
                   />
                 </div>
                 <div
-                  className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer"
-                  onClick={() => setSelectedImage(`${BASE}images/projects/hydra-2.jpg`)}
+                  className="rounded-2xl overflow-hidden bg-gradient-to-b from-gray-100 to-gray-200 p-1 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer"
+                  onClick={() => setSelectedImage(`${BASE}images/projects/hydra-2.webp`)}
                 >
                   <img
-                    src={`${BASE}images/projects/hydra-2.jpg`}
+                    src={`${BASE}images/projects/hydra-2.webp`}
                     alt="Награждение от ЭН+ за проект Hydra"
-                    className="w-full aspect-[16/10] object-cover"
+                    className="w-full aspect-[16/10] object-cover rounded-xl"
+                    loading="lazy"
                   />
                 </div>
               </div>
@@ -386,7 +502,6 @@ function App() {
           <div className="dev-grid grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
             {/* MakarovFlow Project */}
             <div className="dev-card glass rounded-3xl p-8 relative overflow-hidden transition-transform hover:-translate-y-1 reveal">
-              <div className="dev-card-icon text-5xl mb-4">🧠</div>
               <h3 className="text-xl mb-3 font-display">MakarovFlow</h3>
               <p className="text-text-secondary text-sm leading-relaxed">
                 Telegram Mini App для контроля эмоционального состояния. Встроенный ИИ-агент анализирует сон, дневник и привычки, связывает данные за неделю и больше, находит что негативно влияет на состояние, а что благоприятно.
@@ -402,10 +517,10 @@ function App() {
                   <div
                     key={num}
                     className="phone-mockup relative bg-gradient-to-b from-gray-100 to-gray-200 rounded-2xl p-1 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer"
-                    onClick={() => setSelectedImage(`${BASE}images/projects/makarovflow-${num}.jpg`)}
+                    onClick={() => setSelectedImage(`${BASE}images/projects/makarovflow-${num}.webp`)}
                   >
                     <img
-                      src={`${BASE}images/projects/makarovflow-${num}.jpg`}
+                      src={`${BASE}images/projects/makarovflow-${num}.webp`}
                       alt={`MakarovFlow скриншот ${num}`}
                       className="w-full aspect-[9/19] object-cover object-top rounded-xl"
                       onError={(e) => {
@@ -419,7 +534,6 @@ function App() {
 
             {/* SoloStyle Project */}
             <div className="dev-card glass rounded-3xl p-8 relative overflow-hidden transition-transform hover:-translate-y-1 reveal">
-              <div className="dev-card-icon text-5xl mb-4">💼</div>
               <h3 className="text-xl mb-3 font-display">SoloStyle</h3>
               <p className="text-text-secondary text-sm leading-relaxed">
                 Приложение для западного рынка труда — аналог HH.ru. Люди находят исполнителей услуг за деньги, предприниматели находят клиентов. Приложение написано на языке Swift для iOS. Приложение адаптировано под русский и английский языки.
@@ -435,10 +549,10 @@ function App() {
                   <div
                     key={num}
                     className="phone-mockup relative bg-gradient-to-b from-gray-100 to-gray-200 rounded-2xl p-1 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer"
-                    onClick={() => setSelectedImage(`${BASE}images/projects/solostyle-${num}.png`)}
+                    onClick={() => setSelectedImage(`${BASE}images/projects/solostyle-${num}.webp`)}
                   >
                     <img
-                      src={`${BASE}images/projects/solostyle-${num}.png`}
+                      src={`${BASE}images/projects/solostyle-${num}.webp`}
                       alt={`SoloStyle - ${num === 1 ? 'Calendar' : num === 2 ? 'Clients' : num === 3 ? 'Profile' : 'Settings'}`}
                       className="w-full aspect-[9/19] object-cover object-top rounded-xl"
                       onError={(e) => {
@@ -456,10 +570,10 @@ function App() {
             <p className="text-center text-text-muted text-sm mb-6">Процесс разработки</p>
             <AnimatedGallery
               images={[
-                { src: `${BASE}images/projects/dev-process-1.jpg`, alt: "Процесс разработки 1" },
-                { src: `${BASE}images/projects/dev-process-2.jpg`, alt: "Процесс разработки 2" },
-                { src: `${BASE}images/projects/dev-process-3.jpg`, alt: "Процесс разработки 3" },
-                { src: `${BASE}images/projects/dev-process-4.jpg`, alt: "Процесс разработки 4" },
+                { src: `${BASE}images/projects/dev-process-1.webp`, alt: "Процесс разработки 1" },
+                { src: `${BASE}images/projects/dev-process-2.webp`, alt: "Процесс разработки 2" },
+                { src: `${BASE}images/projects/dev-process-3.webp`, alt: "Процесс разработки 3" },
+                { src: `${BASE}images/projects/dev-process-4.webp`, alt: "Процесс разработки 4" },
               ]}
               autoplay
             />
@@ -669,10 +783,10 @@ function App() {
                         <div
                           key={num}
                           className="certificate-thumb relative aspect-[3/4] rounded-lg overflow-hidden cursor-pointer group shadow-sm"
-                          onClick={() => setSelectedImage(`${BASE}images/certificates/cert-${num}.jpg`)}
+                          onClick={() => setSelectedImage(`${BASE}images/certificates/cert-${num}.webp`)}
                         >
                           <img
-                            src={`${BASE}images/certificates/cert-${num}.jpg`}
+                            src={`${BASE}images/certificates/cert-${num}.webp`}
                             alt={`Грамота ${num}`}
                             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                             onError={(e) => {
@@ -690,7 +804,7 @@ function App() {
                   </div>
                 </div>
                 <div className="sports-gallery flex justify-center">
-                  <img src={`${BASE}images/judo.jpg`} alt="Дзюдо" className="w-full max-w-md rounded-2xl object-cover transition-transform hover:scale-105 cursor-pointer" onClick={() => setSelectedImage(`${BASE}images/judo.jpg`)} />
+                  <img src={`${BASE}images/judo.webp`} alt="Дзюдо" className="w-full max-w-md rounded-2xl object-cover transition-transform hover:scale-105 cursor-pointer" onClick={() => setSelectedImage(`${BASE}images/judo.webp`)} loading="lazy" />
                 </div>
               </div>
             </div>
@@ -702,7 +816,10 @@ function App() {
               <div className="sports-text">
                 <h3 className="text-3xl mb-4 font-display">Тренажёрный зал</h3>
                 <p className="text-text-secondary leading-relaxed mb-4">
-                  Занимаюсь с 14 лет, активно — с 15. Регулярные тренировки стали частью режима.
+                  Спорт развивает дисциплину, я согласен но зал развивает её намного больше. Нетрудно заставлять себя когда на тебя орёт тренер, трудно заставить себя работать зная что можешь уйти домой и никто и слова не скажет против. Такое понимание дало мне осознать что зал это некая новая часть моей жизни, я сам самостоятельно делаю то что мне дискомфортно для своей долговременной выгоды.
+                </p>
+                <p className="text-text-secondary leading-relaxed mb-4">
+                  А самое главное что я чувствую в зале это свободу, я всю жизнь занимался с тренерами и постоянный напряг на тренировках стал для меня нормой. Придя в зал я не могу нарадоваться что я сам себе хозяин. И самое главное я занимаюсь так же, а то и больше. Сам без указа. Зал лучшее что со мной случалось в спортивной жизни. Я очень рад что пошёл туда вместо обычных тренировок.
                 </p>
                 <div className="sports-stats flex gap-5 mt-6">
                   <div className="sport-stat glass text-center p-4 rounded-2xl">
@@ -712,7 +829,7 @@ function App() {
                 </div>
               </div>
               <div className="sports-gallery flex justify-center">
-                <img src={`${BASE}images/judo-2.jpg`} alt="Тренировка" className="w-full max-w-md rounded-2xl object-cover transition-transform hover:scale-105 cursor-pointer" />
+                <img src={`${BASE}images/judo-2.webp`} alt="Тренировка" className="w-full max-w-md rounded-2xl object-cover transition-transform hover:scale-105 cursor-pointer" loading="lazy" />
               </div>
             </div>
           )}
@@ -733,7 +850,7 @@ function App() {
                 </div>
               </div>
               <div className="sports-gallery flex justify-center">
-                <img src={`${BASE}images/snowboard-1.jpg`} alt="Сноуборд с друзьями" className="w-full max-w-md rounded-2xl object-cover transition-transform hover:scale-105 cursor-pointer" />
+                <img src={`${BASE}images/snowboard-1.webp`} alt="Сноуборд с друзьями" className="w-full max-w-md rounded-2xl object-cover transition-transform hover:scale-105 cursor-pointer" loading="lazy" />
               </div>
             </div>
           )}
@@ -744,7 +861,13 @@ function App() {
               <div className="sports-text">
                 <h3 className="text-3xl mb-4 font-display">Страйкбол</h3>
                 <p className="text-text-secondary leading-relaxed mb-4">
-                  Играю 2 года. Команда из 6 друзей — сами создаём сценарии и игры. Играем на заброшках или в лесу.
+                  Страйкбол очень интересное хобби, мы решили им заняться поскольку часто ездили в лес в мой охотничий домик и атмосфера там очень подходила под военное настроение. После покупки мы ощутили просто животный кайф, когда адреналин настолько ломает восприятие мира что ты можешь лежать в снегу а над головой будут лететь пули но ты будешь предельно сосредоточен и в моменте. В обычной жизни мало где я могу получить схожие чувства.
+                </p>
+                <p className="text-text-secondary leading-relaxed mb-4">
+                  Также страйкбол показывает человека со всех сторон так как он постоянно находится в стрессе и очень часто нужно заставлять себя штурмовать какую-то позицию так как мозг отказывается говоря что там больно и т.д., но помочь напарникам надо и ты перебарывая себя идёшь туда где будет больно, плохо и некомфортно. Это как некая закалка.
+                </p>
+                <p className="text-text-secondary leading-relaxed mb-4">
+                  Стратегия в страйкболе это основа любой победы, хорошая тактика игры перевешивает численное преимущество противника, так что на играх я учусь работать думая наперёд, перебирая все возможные варианты очень быстро так как любая секунда может стать последней и в таком режиме мозг начинает выдавать иногда абсурдные вещи, а иногда настолько изощрённые что думаешь как он за такой маленький промежуток времени смог всё это придумать.
                 </p>
                 <div className="sports-stats flex gap-5 mt-6">
                   <div className="sport-stat glass text-center p-4 rounded-2xl">
@@ -762,26 +885,29 @@ function App() {
                 <div className="grid grid-cols-[1fr_1.3fr_1fr] gap-3 items-center">
                   {/* Левое изображение */}
                   <img
-                    src={`${BASE}images/airsoft-1.jpg`}
+                    src={`${BASE}images/airsoft-1.webp`}
                     alt="Страйкбол 1"
                     className="w-full aspect-[3/4] rounded-xl object-cover transition-all duration-300 hover:scale-105 hover:shadow-lg cursor-pointer"
-                    onClick={() => setSelectedImage(`${BASE}images/airsoft-1.jpg`)}
+                    onClick={() => setSelectedImage(`${BASE}images/airsoft-1.webp`)}
+                    loading="lazy"
                   />
                   
                   {/* Центральное изображение - акцент, больше */}
                   <img
-                    src={`${BASE}images/airsoft-2.jpg`}
+                    src={`${BASE}images/airsoft-2.webp`}
                     alt="Страйкбол 2"
                     className="w-full aspect-[2/3] rounded-2xl object-cover transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer"
-                    onClick={() => setSelectedImage(`${BASE}images/airsoft-2.jpg`)}
+                    onClick={() => setSelectedImage(`${BASE}images/airsoft-2.webp`)}
+                    loading="lazy"
                   />
                   
                   {/* Правое изображение */}
                   <img
-                    src={`${BASE}images/airsoft-3.jpg`}
+                    src={`${BASE}images/airsoft-3.webp`}
                     alt="Страйкбол 3"
                     className="w-full aspect-[3/4] rounded-xl object-cover transition-all duration-300 hover:scale-105 hover:shadow-lg cursor-pointer"
-                    onClick={() => setSelectedImage(`${BASE}images/airsoft-3.jpg`)}
+                    onClick={() => setSelectedImage(`${BASE}images/airsoft-3.webp`)}
+                    loading="lazy"
                   />
                 </div>
               </div>
@@ -794,15 +920,15 @@ function App() {
           <h2 className="contact-title mb-3 reveal">Мои контакты</h2>
           <p className="contact-subtitle text-text-secondary text-base mb-8 reveal"></p>
           <div className="contact-links flex justify-center gap-4 flex-wrap reveal">
-            <a href="#" className="contact-link glass inline-flex items-center gap-2 px-5 py-3.5 text-text-primary text-sm font-medium transition-transform hover:-translate-y-1">
+            <a href="https://github.com/romanmakarovirk" className="contact-link glass inline-flex items-center gap-2 px-5 py-3.5 text-text-primary text-sm font-medium transition-transform hover:-translate-y-1" target="_blank">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
               GitHub
             </a>
-            <a href="https://t.me/rayzekss_makarov" className="contact-link glass inline-flex items-center gap-2 px-5 py-3.5 text-text-primary text-sm font-medium transition-transform hover:-translate-y-1" target="_blank">
+            <a href="https://t.me/rm_rom" className="contact-link glass inline-flex items-center gap-2 px-5 py-3.5 text-text-primary text-sm font-medium transition-transform hover:-translate-y-1" target="_blank">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
               Telegram
             </a>
-            <a href="#" className="contact-link glass inline-flex items-center gap-2 px-5 py-3.5 text-text-primary text-sm font-medium transition-transform hover:-translate-y-1">
+            <a href="mailto:computer20op@mail.ru" className="contact-link glass inline-flex items-center gap-2 px-5 py-3.5 text-text-primary text-sm font-medium transition-transform hover:-translate-y-1">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
               Email
             </a>
@@ -811,7 +937,7 @@ function App() {
 
         {/* Footer */}
         <footer className="py-8 text-center text-text-muted text-xs">
-          <p>© 2025 Роман Макаров</p>
+          <p>© 2026 Роман Макаров</p>
         </footer>
       </div>
 
